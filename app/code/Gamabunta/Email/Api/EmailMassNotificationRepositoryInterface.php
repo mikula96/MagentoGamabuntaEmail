@@ -4,6 +4,7 @@ namespace Gamabunta\Email\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Gamabunta\Email\Model\Database\Model\EmailMassNotification as Model;
+use Magento\Framework\Phrase;
 
 interface EmailMassNotificationRepositoryInterface
 {
@@ -23,7 +24,7 @@ interface EmailMassNotificationRepositoryInterface
      * @param Model $model
      * @param bool $shouldReturnModel - if true saved model will be returned otherwise true will be returned if entity was properly saved
      * @param bool $shouldReturnError
-     * @return Model|bool
+     * @return bool|Model|Phrase|string|null
      */
     public function save(Model $model, $shouldReturnModel = true, $shouldReturnError = true);
 
