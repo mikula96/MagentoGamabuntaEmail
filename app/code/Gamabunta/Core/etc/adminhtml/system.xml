@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="gamabunta" class="code-core" translate="label" sortOrder="30">
+            <label>Gamabunta</label>
+        </tab>
+        <section id="g_core" showInStore="1" showInDefault="1" showInWebsite="1" sortOrder="10">
+            <tab>gamabunta</tab>
+            <label>Core</label>
+            <resource>Gamabunta_Core::core</resource>
+
+            <group id="core" showInWebsite="1" showInDefault="1" showInStore="1" canRestore="1" sortOrder="10">
+                <label>Core</label>
+                <field id="enabled" showInDefault="1" type="select" showInWebsite="1" showInStore="1" canRestore="1" sortOrder="10">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip>This field is used to show menu for Code module.</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

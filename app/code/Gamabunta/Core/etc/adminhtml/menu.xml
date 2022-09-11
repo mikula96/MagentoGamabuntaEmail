@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+
+<!--        Depends on config should be changed if new group is added. Then it should be moved to spotLight menu item ( the second one )-->
+        <add id="Gamabunta_Core::coreMenuItem"
+             title="Gamabunta"
+             module="Gamabunta_Core"
+             sortOrder="51"
+             resource="Gamabunta_Core::core"
+             dependsOnConfig="g_core/core/enabled"
+             dependsOnModule="Gamabunta_Core"
+        />
+        <add id="Gamabunta_Core::core"
+             title="Gamabunta"
+             module="Gamabunta_Core"
+             sortOrder="51"
+             resource="Gamabunta_Core::core"
+             parent="Gamabunta_Core::coreMenuItem"
+             dependsOnConfig="g_core/core/enabled"
+             dependsOnModule="Gamabunta_Core"
+        />
+    </menu>
+</config>

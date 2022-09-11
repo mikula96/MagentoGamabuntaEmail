@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Gamabunta_Email::emailStatus"
+             title="Email Status"
+             module="Gamabunta_Email"
+             sortOrder="51"
+             resource="Gamabunta_Email::email"
+             dependsOnConfig="email/general/enabled"
+             parent="Gamabunta_Core::core"
+             translate="label"
+             dependsOnModule="Gamabunta_Email"
+             action="gamabunta_email/status/grid"
+        />
+    </menu>
+</config>

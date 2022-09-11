@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="gamabunta_email_mass_notification" resource="default" engine="innodb" comment="">
+        <column xsi:type="bigint" name="id" unsigned="true" nullable="false" identity="true" comment="Primary key" />
+        <column xsi:type="varchar" name="email_template_id" nullable="false" comment="Id for email template; Could be string from email_templates.xml file or ID which is taken from admin" />
+        <column xsi:type="varchar" name="sender_email" nullable="false" comment="Email address for sender" />
+        <column xsi:type="varchar" name="receiver email" nullable="false" comment="Json encoded one or multiple receiver email addresses" />
+        <column xsi:type="varchar" name="template_vars" nullable="false" comment="Json encoded template vars" />
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" comment="Id of store from which email is sent" />
+        <column xsi:type="int" name="retries_left" nullable="false" default="1000" comment="Number of retries left" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+        <constraint xsi:type="foreign"
+                    referenceTable="store"
+                    referenceColumn="store_id"
+                    table="gamabunta_email_mass_notification"
+                    column="store_id"
+                    referenceId="EMAIL_STORE_STORE_ID"
+                    onDelete="NO ACTION" />
+
+        <index referenceId="GAMABUNTA_EMAIL_MASS_NOTIFICATION_ID" indexType="btree">
+            <column name="id" />
+        </index>
+    </table>
+</schema>
