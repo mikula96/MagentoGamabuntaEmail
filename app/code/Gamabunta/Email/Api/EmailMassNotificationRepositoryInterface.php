@@ -4,6 +4,7 @@ namespace Gamabunta\Email\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Gamabunta\Email\Model\Database\Model\EmailMassNotification as Model;
+use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Phrase;
 
 interface EmailMassNotificationRepositoryInterface
@@ -45,7 +46,10 @@ interface EmailMassNotificationRepositoryInterface
     public function deleteById($id);
 
     /**
+     * Returns list of entities from database
+     *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @return SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
 }

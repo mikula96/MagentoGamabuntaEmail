@@ -113,6 +113,12 @@ class EmailMassNotificationRepository implements EmailMassNotificationRepository
         return $this->delete($this->getById($id));
     }
 
+    /**
+     * @inheritDoc
+     *
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return SearchResultsInterface
+     */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $collection = $this->_collectionFactory->create();
